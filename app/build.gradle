@@ -3,6 +3,7 @@ project.ext {
     lifecycle = "2.0.0"
     retrofit = "2.6.0"
     dagger_version = "2.23.1"
+    exoplayer = "2.10.1"
 }
 
 apply plugin: 'com.android.application'
@@ -10,9 +11,15 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.0"
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     defaultConfig {
         applicationId "best.coachme"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -34,6 +41,10 @@ dependencies {
     implementation 'androidx.vectordrawable:vectordrawable:1.0.1'
 
     implementation "androidx.constraintlayout:constraintlayout:$project.constraintlayout"
+    implementation "com.google.android.exoplayer:exoplayer:$project.exoplayer"
+    implementation "com.google.android.exoplayer:exoplayer-core:$project.exoplayer"
+    implementation "com.google.android.exoplayer:exoplayer-dash:$project.exoplayer"
+    implementation "com.google.android.exoplayer:exoplayer-ui:$project.exoplayer"
 
     // Arch
     annotationProcessor "androidx.lifecycle:lifecycle-compiler:$project.lifecycle"
